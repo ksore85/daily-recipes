@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ksore85/just-tech-news.git"
+    "url": "git+https://github.com/ksore85/daily-recipes.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ksore85/just-tech-news/issues"
+    "url": "https://github.com/ksore85/daily-recipes/issues"
   },
-  "homepage": "https://github.com/ksore85/just-tech-news#readme",
+  "homepage": "https://github.com/ksore85/daily-recipes#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
