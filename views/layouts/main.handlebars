@@ -1,32 +1,54 @@
 <!DOCTYPE html>
+{{!-- <html class="no-js" lang="en"> --}}
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
+  <title>The Chef's Kiss Daily Food Blog</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">The Tech Blog</a>
-      </h1>
-      <nav>
+  <div class="container" >
+    <header class="grey-text text-darken-4">
+      <nav class="right">
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
+        <button id="logout" class="button is-link">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
       </nav>
+      <h1 class="">
+        <a href="/" class="grey-text text-darken-4">The Chef's Kiss Daily Food Blog</a>
+        <img class="logo circle" src="../images/logo.png">
+      </h1>
+      <h2>
+        Upgrade your every day meals with the help of a chef's kiss recipe! 
+      </h2>
     </header>
+    {{!-- hero --}}
+    <div class="row">
+    <section class="section">
+      <div class="carousel carousel-slider" id="carousel">
+        <a class="carousel-item responsive-img"><img src="../images/carousel1.jpg"></a>
+        <a class="carousel-item responsive-img"><img src="../images/carousel2.jpg"></a>
+        <a class="carousel-item responsive-img"><img src="../images/carousel3.jpg"></a>
+        <a class="carousel-item responsive-img"><img src="../images/carousel4.jpg"></a>
+        <a class="carousel-item responsive-img"><img src="../images/carousel5.jpg"></a>
+        <a class="carousel-item responsive-img"><img src="../images/carousel6.jpg"></a>
+        <a class="carousel-item responsive-img"><img src="../images/carousel7.jpg"></a>
+
+      </div>
+    </section>
+    </div>
     <main>
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="page-footer">
       Thanks for visiting!
     </footer>
   </div>
@@ -34,6 +56,9 @@
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+<script src="/javascript/css.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 
 </html>
