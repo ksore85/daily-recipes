@@ -1,8 +1,11 @@
 nav {
-    background-color: #c62828 !important;
+    background-color: #dd3a3a !important;
 }
 .logo {
     border: solid 3px #000000;
     height: 150px;
     width: auto;
+}
+footer .page-footer{
+    background-color: #dd3a3a !important;
 }
