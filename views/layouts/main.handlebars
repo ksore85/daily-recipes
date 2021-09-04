@@ -15,29 +15,33 @@
     <header class="grey-text text-darken-4">
       <nav class="right">
         <div class="nav-wrapper">
-        <a href="/" class="brand-logo right">The Chef's Kiss</a>
-        {{#if loggedIn}}
-        <a href="/">Home</a>
-        <a href="/dashboard">dashboard</a>
-        <button id="logout">logout</button>
+          <a href="/" class="brand-logo right hide-on-small-only">The Chef's Kiss</a>
+            <ul id="nav">
+              {{#if loggedIn}}
+              <li><a href="/">Home</a></li>
+              <li><a href="/dashboard">dashboard</a></li>
+              <li><button id="logout">logout</button></li>
 
-        {{else}}
-        <a href="/">Home</a>
-        <a href="/login">login</a>
-        <a href="/recipe-of-the-day">Recipe of the Day</a>
-        {{/if}}
+              {{else}}
+              <li><a href="/">Home</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/recipe-of-the-day">Recipe of the Day</a></li>
+              {{/if}}
+            </ul>
        </div>
       </nav>
+      <div>
       <h1 class="">
         <a href="/" class="grey-text text-darken-4">The Chef's Kiss Daily Food Blog</a>
-        <img class="logo circle" src="../images/logo.png">
       </h1>
-      <h2>
+        <img class="logo circle" src="../images/logo.png">
+      </div>
+      <h3>
         Upgrade your every day meals with the help of a chef's kiss recipe! 
-      </h2>
+      </h3>
     </header>
     <div class="row">
-    <section class="section">
+    <section class="section hide-on-small-only" >
       <div class="carousel carousel-slider" id="carousel">
         <a class="carousel-item responsive-img"><img src="../images/carousel1.jpg"></a>
         <a class="carousel-item responsive-img"><img src="../images/carousel2.jpg"></a>

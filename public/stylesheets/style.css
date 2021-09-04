@@ -6,6 +6,56 @@ nav {
     height: 150px;
     width: auto;
 }
-footer .page-footer{
+.carousel .carousel-item>img{
+    align-items: center;
+}
+img{
+    float: right;
+}
+div .title{
+    font-size: large;
+}
+footer{
     background-color: #dd3a3a !important;
+    text-align: center;
+}
+/* media queries */
+@media (max-width: 480px) {
+    h1, h2{
+        text-align: center;
+    }
+    h2{
+        font-size: small;
+    }
+    div .title{
+        font-size: large;
+    }
+}
+
+
+@media (max-width: 768px) {
+    h2{
+        text-align: center;
+        font-size: small;
+    }
+    .carousel .carousel-item>img{
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    h1{
+        text-align: center;
+    }
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    h2{
+        text-align: center;
+        font-size: medium !important;
+    } 
 }

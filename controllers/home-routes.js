@@ -92,8 +92,11 @@ router.get('/post/:id', (req, res) => {
 
 // // get random recipe
 router.get('/recipe-of-the-day', (req, res) => {
-  Post.findAll({
-    order: sequelize.random() ,
+  Post.findOne({
+    order: sequelize.random('id'),
+    where: {
+      id: req.params.id
+    },
     attributes: [
       'id',
       'post_url',
@@ -116,24 +119,25 @@ router.get('/recipe-of-the-day', (req, res) => {
       }
     ]
   })
-  .then(dbPostData => {
-    if (!dbPostData) {
-      res.status(404).json({ message: 'No post found' });
-      return;
-    }
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
 
-    const post = dbPostData.get({ plain: true });
+      const post = dbPostData.get({ plain: true });
 
-    res.render('random-post', {
-      post,
-      loggedIn: req.session.loggedIn
+      res.render('random-post', {
+        post,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
+});
+
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
