@@ -5,7 +5,7 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#password-login').value.trim();
   
     if (email && password) {
-      const response = await fetch('/auth/google', {
+      const response = await fetch('/api/users/login', {
         method: 'post',
         body: JSON.stringify({
           email,
@@ -14,8 +14,9 @@ async function loginFormHandler(event) {
         headers: { 'Content-Type': 'application/json' }
       });
   
+      console.log(response)
       if (response.ok) {
-        document.location.replace('/');
+       document.location.replace('/');
       } else {
         alert(response.statusText);
       }
@@ -47,7 +48,21 @@ async function loginFormHandler(event) {
       }
     }
   }
+
+  async function signGoogle(event) {
+    // location.href="/auth/google"
+     const response = await fetch('/auth/google');
+
+    console.log(response)
+    // if (response.ok) {
+    //  document.location.replace('/');
+    // } else {
+    //   alert(response.statusText);
+    // }
+  }
   
   document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+  document.querySelector('#google-sign-in').addEventListener('click', signGoogle);
   
   document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
