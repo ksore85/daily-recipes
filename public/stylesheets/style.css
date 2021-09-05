@@ -15,10 +15,18 @@ img{
 div .title{
     font-size: large;
 }
+.comment {
+    font-size: medium;
+    font-weight: bold;
+}
+.comment-form{
+    border: solid 3px #000000;
+}
 footer{
     background-color: #dd3a3a !important;
     text-align: center;
 }
+
 /* media queries */
 @media (max-width: 480px) {
     h1, h2{
