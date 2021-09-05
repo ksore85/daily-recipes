@@ -1,5 +1,5 @@
 {
-  "name": "just-tech-news",
+  "name": "daily-recipes",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,23 +10,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ksore85/just-tech-news.git"
+    "url": "git+https://github.com/ksore85/daily-recipes.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ksore85/just-tech-news/issues"
+    "url": "https://github.com/ksore85/daily-recipes/issues"
   },
-  "homepage": "https://github.com/ksore85/just-tech-news#readme",
+  "homepage": "https://github.com/ksore85/daily-recipes#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
+    "http-proxy-middleware": "^2.0.1",
     "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^2.3.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
     "sequelize": "^6.6.5"
   }
 }
