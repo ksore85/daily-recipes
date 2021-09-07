@@ -119,7 +119,7 @@ router.get('/random-recipe', (req, res) => {
  }).then(randomPost => {
   const post = randomPost[0].get({ plain: true })
 
-  res.render('random-post', {post: post,
+  res.render('random-post', {post,
   loggedIn: req.session.loggedIn
   }) 
    

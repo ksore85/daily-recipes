@@ -1,45 +1,25 @@
-<article>
-  <div>
-      <h3>{{post.title}}</a></h3>
-      <span>({{post.post_url}})</span>
-  </div>
-  <div>
-    {{post.vote_count}} point(s) by {{post.user.username}} on
-    {{post.created_at}}
-    |
-    <a href="/post/{{post.id}}"></a>
-  </div>
-</article>
+{{> post-info post}}
 
 {{#if loggedIn}}
-<form>
+<form class="comment-form">
   <div>
-    <h3>Add a comment</h3>
+    <h4>Add a comment</h4>
     <textarea name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit" class="btn comment-form">post</button>
-    <button type="button" class="btn upvote">upvote</button>
+    <button type="submit" class="comment-form btn">post</button>
+    <button type="button" class="upvote btn">upvote</button>
   </div>
 </form>
+
 {{/if}}
 
-<div>
-  {{#each post.comments}}
-  <section>
-    <h4>Comments</h4>
-    <div class="comment">
-      {{comment_text}}
-    </div>
-    <div>
-      {{user.username}} on {{created_at}}
-    </div>
-  </section>
-  {{/each}}
-</div>
-
+<h5 class="comment-header"> Comments</h5>
+{{> comments post.comments}}
+  
 {{#if loggedIn}}
+
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
 {{/if}}
