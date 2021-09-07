@@ -1,25 +1,26 @@
 <article>
   <div>
-    <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-    <span>({{post.post_url}})</span>
+      <h3>{{post.title}}</a></h3>
+      <span>({{post.post_url}})</span>
   </div>
   <div>
     {{post.vote_count}} point(s) by {{post.user.username}} on
     {{post.created_at}}
     |
-    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+    <a href="/post/{{post.id}}"></a>
   </div>
 </article>
 
 {{#if loggedIn}}
 <form>
   <div>
+    <h3>Add a comment</h3>
     <textarea name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
-    <button type="button" class="btn">upvote</button>
+    <button type="submit" class="btn comment-form">post</button>
+    <button type="button" class="btn upvote">upvote</button>
   </div>
 </form>
 {{/if}}
@@ -27,11 +28,12 @@
 <div>
   {{#each post.comments}}
   <section>
-    <div>
-      {{user.username}} on {{created_at}}
+    <h4>Comments</h4>
+    <div class="comment">
+      {{comment_text}}
     </div>
     <div>
-      {{comment_text}}
+      {{user.username}} on {{created_at}}
     </div>
   </section>
   {{/each}}
