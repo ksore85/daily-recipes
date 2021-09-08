@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3001"
+  callbackURL: "/auth/google/callback"
 },
 function(accessToken, refreshToken, profile, done) {
   console.log(profile)
@@ -53,7 +53,7 @@ function(accessToken, refreshToken, profile, done) {
 }
 ));
 
-app.use(cors({ origin: "http://localhost:3001" }))
+app.use(cors({ origin: "https://rocky-dusk-49928.herokuapp.com" }))
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
