@@ -17,6 +17,8 @@ nav {
 }
 .carousel .carousel-item>img{
     align-items: center;
+    width: 1100px;
+    height: 500px;
 }
 img{
     float: right;
