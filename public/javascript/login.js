@@ -51,7 +51,8 @@ async function loginFormHandler(event) {
 
   async function signGoogle(event) {
     // location.href="/auth/google"
-     const response = await fetch('/auth/google');
+     const response = await fetch('/auth/google').catch(err => console.log(err));
+  
 
     console.log(response)
     // if (response.ok) {
