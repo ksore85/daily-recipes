@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS justtechnews_db;
+DROP DATABASE IF EXISTS chefsKiss_db;
 
-CREATE DATABASE justtechnews_db;
+CREATE DATABASE chefsKiss_db;

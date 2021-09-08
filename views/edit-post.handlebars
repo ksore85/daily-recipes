@@ -3,14 +3,14 @@
   <h2>
     Edit Post
   </h2>
-  <form class="edit-post-form">
+  <form class="edit-post">
     {{!-- Title of recipe --}}
     <div>
       <input name="post-title" type="text" value="{{post.title}}" />
     </div>
     {{!-- Recipe content --}}
     <div>
-      <textarea id="post-url" name="post-url">{{post.post_url}}</textarea>
+      <textarea id="recipe" name="recipe">{{post.recipe}}</textarea>
     </div>
     <div>
       This post has {{post.vote_count}} {{format_plural "point" post.vote_count}}
