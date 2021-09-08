@@ -17,8 +17,8 @@ async function upvoteClickHandler(event) {
     if (response.ok) {
       document.location.reload();
     } else {
-      alert(response.statusText);
+      alert('You cannot vote for the same post twice!');
     }
   }
   
-  document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);
+  document.querySelector('.upvote').addEventListener('click', upvoteClickHandler);
