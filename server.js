@@ -53,7 +53,12 @@ function(accessToken, refreshToken, profile, done) {
 }
 ));
 
-app.use(cors())
+app.use(cors({
+  origin: '*',
+  methods: "GET, POST, PATCH, DELETE, PUT",
+  allowedHeaders: "Content-Type, Authorization",
+
+}))
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
