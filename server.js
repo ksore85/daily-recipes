@@ -53,7 +53,7 @@ function(accessToken, refreshToken, profile, done) {
 }
 ));
 
-app.use(cors({ origin: "https://rocky-dusk-49928.herokuapp.com" }))
+app.use(cors())
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
