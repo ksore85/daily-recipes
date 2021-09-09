@@ -1,3 +1,12 @@
+.sidenav li>a {
+    padding:0 32px !important}
+
+.collapsible-body>ul>li>a {
+    padding: 0 48px !important;
+    font-weight: 400 !important;
+}
+
+/* header */
 nav {
     background-color: #dd3a3a !important;
 }
@@ -6,6 +15,88 @@ nav {
     height: 150px;
     width: auto;
 }
-footer .page-footer{
+.carousel .carousel-item>img{
+    align-items: center;
+    width: 1100px;
+    height: 500px;
+}
+img{
+    float: right;
+}
+/* header for small screens */
+.small-header{
+    position: relative;
+    text-align: center;
+}
+
+/* posts */
+div .title{
+    font-size: large;
+}
+/* Comments */
+.comment-header{
+    text-decoration: underline #dd3a3a;
+    text-underline-offset: 5px
+}
+.comment {
+    font-size: medium;
+    font-weight: bold;
+}
+/* footer */
+footer{
     background-color: #dd3a3a !important;
+    text-align: center;
+}
+
+/* media queries */
+@media (max-width: 480px) {
+    nav ul a {
+        font-size: small !important;
+    }
+    h1{
+        text-align: center;
+        font-size: 2.2rem !important;
+    }
+    div .title{
+        font-size: large;
+    }
+    .carousel .carousel-item>img{
+    max-width: 500px;   
+    height: auto;
+    }
+    .recipe {
+        font-size: medium;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .carousel .carousel-item>img{
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    h1{
+        text-align: center;
+    }
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        /* width: 50%; */
+    }
+    h2{
+        text-align: center;
+        font-size: medium !important;
+    } 
+    .new-post {
+        font-size: 45px !important;
+        text-align: left;
+    }
+    .new-post-content>label{
+        font-size: 30px !important;
+    }
 }

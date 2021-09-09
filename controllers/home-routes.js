@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+
 const { Post, User, Comment, Vote } = require('../models');
 
 // get all posts for homepage
@@ -8,7 +9,7 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_url',
+      'recipe',
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -50,7 +51,7 @@ router.get('/post/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
+      'recipe',
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -88,6 +89,44 @@ router.get('/post/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// // get random recipe
+router.get('/random-recipe', (req, res) => {
+ Post.findAll({
+   order: sequelize.random(),
+   limit: 1,
+   attributes: [
+    'id',
+    'recipe',
+    'title',
+    'created_at',
+    [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+  ],
+   include: [
+    {
+      model: Comment,
+      attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+      include: {
+        model: User,
+        attributes: ['username']
+      }
+    },
+    {
+      model: User,
+      attributes: ['username']
+    }
+  ]
+ }).then(randomPost => {
+  const post = randomPost[0].get({ plain: true })
+
+  res.render('random-post', {post,
+  loggedIn: req.session.loggedIn
+  }) 
+   
+  
+ })
+});
+
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {

@@ -1,5 +1,6 @@
 <form class="login-form">
   <div>
+     <h1>Already have an account? Sign in here!</h1>
     <label for="email-login">email:</label>
     <input type="text" id="email-login" />
   </div>
@@ -8,12 +9,13 @@
     <input type="password" id="password-login" />
   </div>
   <div>
-    <button type="submit">login</button>
+    <button class="btn waves-effect waves-light login-form" type="submit">login</button>
   </div>
 </form>
 
 <form class="signup-form">
   <div>
+    <h1>Sign up for an account here!</h1>
     <label for="username-signup">username:</label>
     <input type="text" id="username-signup" />
   </div>
@@ -26,9 +28,12 @@
     <input type="password" id="password-signup" />
   </div>
   <div>
-    <button type="submit">signup</button>
+    <button class="btn waves-effect waves-light singup-form" type="submit">signup</button>
   </div>
-  <a id="google-sign-in">Sign In with Google</a>
+  <div>
+    <h1><a href="/auth/google">Login with your Google Account</a></h1>
+  </div>
+  <a href="https://rocky-dusk-49928.herokuapp.com/auth/google" id="google-sign-in">Sign In with Google</a>
 </form>
 
 <script src="/javascript/login.js"></script>

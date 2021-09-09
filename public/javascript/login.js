@@ -18,7 +18,7 @@ async function loginFormHandler(event) {
       if (response.ok) {
        document.location.replace('/');
       } else {
-        alert(response.statusText);
+        alert(`Incorrect username or password`);
       }
     }
   }
@@ -44,14 +44,15 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert(response.statusText);
+        alert(`The username/email provided is already in use`);
       }
     }
   }
 
   async function signGoogle(event) {
     // location.href="/auth/google"
-     const response = await fetch('/auth/google');
+     const response = await fetch('/auth/google').catch(err => console.log(err));
+  
 
     console.log(response)
     // if (response.ok) {
