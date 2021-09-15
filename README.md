@@ -1,7 +1,7 @@
 # daily-recipes
 
 ## Description
-A full stack recipe blog site demonstrating Create, Read, Update and Delete methods. 
+A full stack food recipe blog site demonstrating Create, Read, Update and Delete methods. 
 
 ## Table of Contents
 - [Usage](#usage)
