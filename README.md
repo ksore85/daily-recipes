@@ -1,7 +1,7 @@
-# daily-recipes
+# The Chef's Kiss Daily Food Blog
 
 ## Description
-A full stack food recipe blog site demonstrating Create, Read, Update and Delete methods. 
+A food blog that allows users to view, comment, and upvote their favorite recipes. A user can also create a profile and upload their own favorite recipes to the website to share with their peers. Users who are indecisive are in luck as the website allows a user to generate a random recipe.
 
 ## Table of Contents
 - [Usage](#usage)
@@ -12,6 +12,7 @@ A full stack food recipe blog site demonstrating Create, Read, Update and Delete
 
 ## Usage
 Once you login with credentials, you'll be routed to your dashboard, where you can Create a post, view your post history, edit posts, or delete posts. 
+Our Website can be found here: https://rocky-dusk-49928.herokuapp.com/
 
 ## Features
 The full list of features for this application is located in the package.json file's list of dependencies.
@@ -25,3 +26,7 @@ The full list of features for this application is located in the package.json fi
 
 ## Questions, Comments, Suggestions
 Please email [Kyle Sorensen](mailto:ksore85@gmail.com), [Marisa Bartelt](mailto:marisandb@yahoo.com), or [Jake Lee](mailto:Jakedlee2018@gmail.com) with any questions, to comment on any bugs, or to make any suggestions.
+
+
+
+
